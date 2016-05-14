@@ -22,6 +22,9 @@ html
           label(for='mobile_number') Mobile Number:
           input#mobile_number(type='text', name='mobile_number')
         div
+          label(for='relationship') Relationship:
+          input#mobile_number(type='text', name='relationship')
+        div
           input.btn.btn-primary(type='submit', value='Add Contact', style='margin-top: 5px;')
       #editContact.module
       table#allContacts.table.table-hover
@@ -31,12 +34,14 @@ html
             th Last Name
             th Email Address
             th Mobile Number
+            th Relationship
             th Config
     script#allContactsTemplate(type='text/template')
       <td><%= first_name %></td>
       <td><%= last_name %></td>
       <td><%= email_address %></td>
       <td><%= mobile_number %></td>
+      <td><%= relationship %></td>
       <td><a href="#contacts/<%= _id %>/edit" class="edit btn">Edit</a></td>
       <td><a href="#contacts/<%= _id %>" class="delete btn">Delete</a></td>
     script#editContactTemplate(type='text/template')
@@ -56,7 +61,11 @@ html
       </div>
       <div>
       <label for="edit_mobile_number">Mobile Number:</label>
-      <input type="text" id="edit_mobile_number" name="edit_email_address" value="<%= mobile_number %>">
+      <input type="text" id="edit_mobile_number" name="edit_mobile_number" value="<%= mobile_number %>">
+      </div>
+      <div>
+      <label for="edit_mobile_number">Relationship:</label>
+      <input type="text" id="edit_relationship" name="edit_relationship" value="<%= relationship %>">
       </div>
       <div>
       <input type="submit" value="Edit Contact" class="btn btn-success">

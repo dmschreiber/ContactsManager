@@ -34,6 +34,7 @@ App.Views.AddContact = Backbone.View.extend({
 		this.last_name = $('#last_name');
 		this.mobile_number = $('#mobile_number');
 		this.email_address = $('#email_address');
+		this.relationship = $('#relationship');
 	},
 
 	events: {
@@ -47,7 +48,8 @@ App.Views.AddContact = Backbone.View.extend({
 			first_name: this.first_name.val(),
 			last_name: this.last_name.val(),
 			email_address: this.email_address.val(),
-			mobile_number: this.mobile_number.val()
+			mobile_number: this.mobile_number.val(),
+			relationship: this.relationship.val()
 		}, { wait: true });
 		this.clearForm();
 	},
@@ -57,6 +59,7 @@ App.Views.AddContact = Backbone.View.extend({
 		this.last_name.val('');
 		this.mobile_number.val('');
 		this.email_address.val('');
+		this.relationship.val('');
 	}
 });
 
@@ -77,6 +80,7 @@ App.Views.EditContact = Backbone.View.extend({
 		this.last_name = this.form.find('#edit_last_name');
 		this.mobile_number = this.form.find('#edit_mobile_number');
 		this.email_address = this.form.find('#edit_email_address');
+		this.relationship = this.form.find('#edit_relationship');
 	},
 
 	events: {
@@ -91,7 +95,8 @@ App.Views.EditContact = Backbone.View.extend({
 			first_name: this.first_name.val(),
 			last_name: this.last_name.val(),
 			mobile_number: this.mobile_number.val(),
-			email_address: this.email_address.val()
+			email_address: this.email_address.val(),
+			relationship: this.relationship.val()
 		});
 
 		this.remove();

@@ -14,7 +14,8 @@ var ContactsSchema = new mongoose.Schema({
   first_name : String,
   last_name : String,
   email_address: String,
-  mobile_number : String
+  mobile_number : String,
+  relationship : String
 });
 var Contacts = mongoose.model("contacts",ContactsSchema);
 
@@ -40,12 +41,15 @@ app.post("/contacts", function(req, res){
     first_name :req.body.first_name,
     last_name :req.body.last_name,
     email_address:req.body.email_address,
-    mobile_number :req.body.mobile_number
-  }).save(function(err,docs){
+    mobile_number :req.body.mobile_number,
+    relationship :req.body.relationship
+  });
+  contact.save(function(err,docs){
     if(err) throw err;
     res.send(docs);
   });
-});
+  console.log(contact.relationship);
+  });
 
 app.put("/contacts/:id", function(req,res){
   var id = req.params.id;
@@ -54,7 +58,9 @@ app.put("/contacts/:id", function(req,res){
       contact.first_name = req.body.first_name,
       contact.last_name = req.body.last_name,
       contact.email_address= req.body.email_address,
-      contact.mobile_number = req.body.mobile_number
+      contact.mobile_number = req.body.mobile_number,
+      contact.relationship = req.body.relationship
+
       contact.save(function(err) {
         if(err) throw err;
         res.send(contact);

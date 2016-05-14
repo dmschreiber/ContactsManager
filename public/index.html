@@ -29,6 +29,10 @@
 		<label for="mobile_number">Mobile Number:</label>
 		<input type="text" id="mobile_number" name="mobile_number"></input>
 	</div>
+	<div>
+		<label for="relationship">Relationship:</label>
+		<input type="text" id="relationship" name="relationship"></input>
+	</div>
 	<div >
 		<input type="submit" value="Add Contact" class="btn btn-primary" style="margin-top:5px">
 	</div>
@@ -45,6 +49,7 @@
 			<th>Last Name</th>
 			<th>Email Address</th>
 			<th>Mobile Number</th>
+			<th>Relationship</th>
 			<th>Config</th>
 		</tr>
 	</thead>
@@ -57,6 +62,7 @@
 	<td><%= last_name %></td>
 	<td><%= email_address %></td>
 	<td><%= mobile_number %></td>
+	<td><%= relationship %></td>
 	<td><a href="#contacts/<%= _id %>/edit" class="edit btn">Edit</a></td>
 	<td><a href="#contacts/<%= _id %>" class="delete btn">Delete</a></td>
 </script>
@@ -81,6 +87,10 @@
 		<div>
 			<label for="edit_mobile_number">Mobile Number:</label>
 			<input type="text" id="edit_mobile_number" name="edit_email_address" value="<%= mobile_number %>">
+		</div>
+		<div>
+			<label for="edit_relationship"> Relationship:</label>
+			<input type="text" id="edit_relationship" name="edit_relationship" value="<%= relationship %>">
 		</div>
 		<div>
 			<input type="submit" value="Edit Contact" class="btn btn-success">
